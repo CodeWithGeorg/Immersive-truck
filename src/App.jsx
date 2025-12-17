@@ -149,7 +149,12 @@ function HTMLContent() {
 export default function App() {
   return (
     <div style={{ width: '100vw', height: '100vh', background: '#080808' }}>
-      <Canvas shadows camera={{ position: [0, 0, 8], fov: 40 }}>
+      <Canvas 
+        shadows 
+        dpr={[1, 1.5]} // Cap pixel ratio to save GPU power
+        gl={{ antialias: true, preserveDrawingBuffer: true }} // Stability settings
+        camera={{ position: [0, 0, 8], fov: 40 }}
+      >
         <Lighting />
         <HTMLContent />
       </Canvas>
