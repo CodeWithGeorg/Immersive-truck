@@ -92,15 +92,18 @@ function Lighting() {
 }
 
 // 3. THE HTML CONTENT (OVERLAY)
+// 3. THE HTML CONTENT (OVERLAY)
 function HTMLContent() {
   return (
     <ScrollControls pages={4} damping={0.2}>
-      {/* The 3D Scene within the ScrollControls */}
       <Float speed={2} rotationIntensity={0.2} floatIntensity={0.5}>
+        {/* Suspense waits for the model to load before rendering */}
         <React.Suspense fallback={<FallbackModel />}>
              <TruckModel />
         </React.Suspense>
       </Float>
+      
+      {/* ... rest of your text code ... */}
       
       {/* Background Particles */}
       <Sparkles count={100} scale={10} size={4} speed={0.4} opacity={0.5} color="#444" />
