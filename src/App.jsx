@@ -12,7 +12,7 @@ function TruckModel() {
 
   // Try to load the truck. If file not found, this might error, so we handle that below.
   // Make sure 'truck.glb' is in your /public folder!
-  const { scene, materials } = useGLTF('/truck.glb'); 
+  const { scene, materials } = useGLTF(''); 
 
   // This runs on every frame (60 times a second)
   useFrame((state, delta) => {
